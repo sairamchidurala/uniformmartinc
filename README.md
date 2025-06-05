@@ -1,7 +1,3 @@
-It looks like there was an issue creating the file in the expected environment. Instead, here's the full content of the `README.md` file that you can copy and create manually in your project root:
-
----
-
 ````markdown
 # 🎓 UniformmartInc
 
@@ -134,7 +130,4 @@ Created by [Your Name](mailto:youremail@example.com) · [GitHub](https://github.
 
 MIT License – free to use and modify 🎓✨
 
-```
-
-Let me know if you’d like this converted into a downloadable file again or added to your Django project automatically.
 ```
