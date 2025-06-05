@@ -20,38 +20,34 @@
 
 # CMD ["gunicorn", "fileuploader.wsgi:application", "--bind", "0.0.0.0:8000"]
 
-# Use official Python image
 FROM python:3.9-slim
 
-# Set environment variables
-ENV PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1
-
-# Create and set working directory
+ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
-# Install system dependencies (required for psycopg2 and Pillow)
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+# Install system dependencies needed for psycopg2 and pillow
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
     gcc \
-    python3-dev \
     libpq-dev \
+    python3-dev \
+    libjpeg-dev \
+    zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
 COPY requirements.txt .
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy project files
+# Copy all source code
 COPY . .
 
 # Make entrypoint executable
-RUN chmod +x /app/entrypoint.sh
+RUN chmod +x ./entrypoint.sh
 
-# Expose port
+# Collect static files at runtime
+ENTRYPOINT ["./entrypoint.sh"]
+
 EXPOSE 8000
 
-# Run entrypoint
-ENTRYPOINT ["/app/entrypoint.sh"]
+CMD ["gunicorn", "fileuploader.wsgi:application", "--bind", "0.0.0.0:8000"]
