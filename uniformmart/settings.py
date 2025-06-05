@@ -32,6 +32,9 @@ ALLOWED_HOSTS = [
     'xenacious-peggie-hell0killer-161af7f3.koyeb.app',  # add your Koyeb app hostname here
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://xenacious-peggie-hell0killer-161af7f3.koyeb.app",
+]
 
 # Application definition
 
