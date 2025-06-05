@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="search-section">
+    <form method="get" action="{% url 'schools' %}">
+        <input type="text" name="q" placeholder="Search school..." value="{{ query }}">
+        <button type="submit">🔍 Search</button>
+    </form>
+</section>
+
+<section class="schools-section">
+    {% for group in categorized_schools %}
+    <h2>{{ group.name }}</h2>
+    <div class="school-grid">
+        {% for school in group.schools %}
+        <div class="school-card">
+            <div class="image-container">
+                <div class="image-container">
+                    <img src="{{ school.image_url }}" alt="{{ school.name }}" class="school-banner">
+                    <div class="logo-wrapper">
+                        <img src="{{ school.logo_url }}" alt="Logo" class="school-logo-overlay">
+                    </div>
+                </div>
+
+            </div>
+            <div class="school-info">
+                <h3>{{ school.name }}</h3>
+                <p>{{ school.about|truncatewords:25 }}</p>
+
+                <h4>Uniforms:</h4>
+                <ul>
+                    {% for uniform in school.uniforms.all %}
+                    <li>
+                        <img src="{{ uniform.image_url }}" alt="{{ uniform.title }}" class="uniform-icon">
+                        {{ uniform.title }}
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                {% if school.measurement_scale %}
+                <h5>Measurement Scale:</h5>
+                <p>{{ school.measurement_scale.scale_info|linebreaks }}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

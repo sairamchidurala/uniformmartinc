@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="services">
+    <h2>🛍️ Our Services</h2>
+    <p>We’ve got everything you need — whether you're shopping for one student or an entire school! 👨‍🏫👩‍⚕️</p>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <img src="{% static 'images/single_order.png' %}" alt="Single Orders">
+            <h3>👕 Single Orders</h3>
+            <p>Buy individual uniforms with ease — perfect for growing kids or replacements.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="{% static 'images/bulk_order.png' %}" alt="Bulk Orders">
+            <h3>📦 Bulk Orders</h3>
+            <p>Order in bulk for schools, academies, and institutions. Volume discounts available!</p>
+        </div>
+
+        <div class="service-card">
+            <img src="{% static 'images/embroidery.png' %}" alt="Embroidery">
+            <h3>🧵 Logo Embroidery</h3>
+            <p>Customize your uniforms with beautifully stitched school logos and names.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="{% static 'images/student_uniforms.png' %}" alt="Student Uniforms">
+            <h3>🎒 Student Uniforms</h3>
+            <p>From pre-K to high school — browse approved styles, sizes, and colors for each school.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="{% static 'images/doctor_uniforms.png' %}" alt="Doctor Uniforms">
+            <h3>🩺 Doctor & Nurse Uniforms</h3>
+            <p>We also supply professional uniforms for healthcare institutions and med schools.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

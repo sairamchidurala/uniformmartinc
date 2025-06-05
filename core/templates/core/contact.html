@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="contact">
+    <h2>📬 Contact Us</h2>
+    <p>We'd love to hear from you! Whether you're a school, parent, or just curious, reach out below.</p>
+
+    <div class="contact-container">
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+            <button type="submit">Send Message ✉️</button>
+        </form>
+
+        <div class="map-box">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.248693943719!2d-122.41941528468145!3d37.77492977975909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085814c1df90c61%3A0xf52e1f0ea4d2f9a4!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1717579740123"
+                width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+{% endblock %}

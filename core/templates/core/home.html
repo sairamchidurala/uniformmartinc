@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}UniformmartInc - Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>Welcome to UniformmartInc!</h2>
+    <p>Find official school uniforms with ease, fun, and style 🎓</p>
+    <form method="get" action="{% url 'schools' %}">
+        <input type="text" name="q" placeholder="Search for your school..." required>
+        <button type="submit">Search</button>
+    </form>
+</section>
+
+<section class="features">
+    <div class="feature-box">
+        <h3>🎒 For Every School</h3>
+        <p>300+ schools and counting! We list verified uniform info from across the country.</p>
+    </div>
+    <div class="feature-box">
+        <h3>📏 Accurate Sizes</h3>
+        <p>Uniforms with proper size guides and optional measurement scales when available.</p>
+    </div>
+    <div class="feature-box">
+        <h3>🔎 Smart Search</h3>
+        <p>Instantly find your school, check uniform images and details in one click.</p>
+    </div>
+</section>
+
+<section class="about-services">
+    <div class="about">
+        <h2>About Us</h2>
+        <p>UniformmartInc is your one-stop platform for official school uniforms. We're on a mission to make finding
+            the right uniform as simple as ABC!</p>
+    </div>
+    <div class="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>School Uniform Listings with Images</li>
+            <li>Smart Search Functionality</li>
+            <li>Size & Measurement Info</li>
+            <li>Category-wise School Browsing</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Search Section -->
+<section class="search-section">
+    <h2>Find Your School</h2>
+    <form method="GET" action="{% url 'schools' %}">
+        <input type="text" name="q" placeholder="Enter school name...">
+        <button type="submit">Search</button>
+    </form>
+</section>
+
+<!-- Filter by Category (optional enhancement) -->
+<section class="search-section">
+    <form method="GET" action="{% url 'schools' %}">
+        <label for="category">Filter by Category:</label>
+        <select name="category" id="category">
+            <option value="">All</option>
+            <option value="Elementary">Elementary</option>
+            <option value="Middle">Middle</option>
+            <option value="High">High</option>
+        </select>
+        <button type="submit">Apply</button>
+    </form>
+</section>
+
+<!-- Schools Display Section -->
+<section class="schools-section">
+    <h2>Schools</h2>
+    <div class="school-grid">
+        {% for school in schools %}
+        <div class="school-card">
+            <img src="{{ school.image.url }}" alt="{{ school.name }}">
+            <div class="school-info">
+                <img class="school-logo" src="{{ school.logo.url }}" alt="Logo">
+                <h3>{{ school.name }}</h3>
+                <p>{{ school.description|truncatewords:25 }}</p>
+                <h4>Uniforms</h4>
+                <ul>
+                    {% for uniform in school.uniforms.all %}
+                    <li><img src="{{ uniform.image.url }}" class="uniform-icon"> {{ uniform.name }}</li>
+                    {% endfor %}
+                </ul>
+                {% if school.measurement_scale %}
+                <h5>Measurement Scale Available</h5>
+                <p>{{ school.measurement_scale }}</p>
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <p>No schools found.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
