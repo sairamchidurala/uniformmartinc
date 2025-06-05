@@ -1,4 +1,4 @@
-````markdown
+
 # 🎓 UniformmartInc
 
 **UniformmartInc** is a Django-based web platform for listing and searching official school uniforms in a fun, organized, and school-themed interface.
@@ -122,12 +122,10 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## 📧 Contact
 
-Created by [Your Name](mailto:youremail@example.com) · [GitHub](https://github.com/yourusername)
+Created by [Sai Ram Chidurala](mailto:sairamchidurala93@gmail.com) · [GitHub](https://github.com/sairamchidurala)
 
 ---
 
 ## © License
 
 MIT License – free to use and modify 🎓✨
-
-```
