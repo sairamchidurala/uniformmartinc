@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-4lp#gn727q9lsmhaa8@x52xu@t&^&lb@usa&n81rk-c7#aj6ri
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'xenacious-peggie-hell0killer-161af7f3.koyeb.app',  # add your Koyeb app hostname here
+]
 
 
 # Application definition
