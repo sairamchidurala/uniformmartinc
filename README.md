@@ -5,6 +5,21 @@
 
 ---
 
+![GitHub Last Commit](https://img.shields.io/github/last-commit/sairamchidurala/uniformmartinc?style=flat&logo=git&logoColor=white&color=0080ff) 
+![Top Language](https://img.shields.io/github/languages/top/sairamchidurala/uniformmartinc?style=flat&color=0080ff) 
+![Language Count](https://img.shields.io/github/languages/count/sairamchidurala/uniformmartinc?style=flat&color=0080ff) 
+
+
+Built with:
+
+![Markdown](https://img.shields.io/badge/Markdown-000000.svg?style=flat&logo=Markdown&logoColor=white)
+![GNU Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=flat&logo=GNU-Bash&logoColor=white)
+![Gunicorn](https://img.shields.io/badge/Gunicorn-499848.svg?style=flat&logo=Gunicorn&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20.svg?style=flat&logo=Django&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED.svg?style=flat&logo=Docker&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB.svg?style=flat&logo=Python&logoColor=white)
+
+---
 ## 🌟 Features
 
 - 🔍 **Smart School Search**: Instantly locate your school's uniform details.
